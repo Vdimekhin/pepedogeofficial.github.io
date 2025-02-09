@@ -34,18 +34,14 @@
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.08); }
-            100% { transform: scale(1); }
-        }
-
-        .pulse {
-            animation: pulse 2s ease-in-out infinite;
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         img {
@@ -70,59 +66,56 @@
             background: #ffdd44;
         }
 
-        .about {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-            max-width: 600px;
-            margin: 50px auto;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 1.5s ease, transform 1.5s ease;
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
 
-        .about.visible {
-            opacity: 1;
-            transform: translateY(0);
+        .pulse {
+            animation: pulse 1.5s infinite;
+        }
+
+        /* Social icons */
+        .social-icons {
+            margin-top: 10px;
+        }
+
+        .social-icons img {
+            width: 40px;
+            height: 40px;
+            margin: 0 10px;
         }
     </style>
 </head>
 <body>
     <div class="container fade-in">
         <h1 class="fade-in-text">PepeDoge Token</h1>
-        <img src="https://pepedogeofficial.github.io/logoPepeDoge.svg" alt="PepeDoge Logo" class="pulse">
+        <img src="https://pepedogeofficial.github.io/logoPepeDoge.svg" alt="PepeDoge Logo" class="pulse" style="max-width: 300px; display: block; margin: 10px auto;">
         <p class="fade-in-text">Welcome to PepeDoge – a new memecoin combining the best of Doge and Pepe!</p>
+        
         <p><b>Token Contract:</b> 0xBDB5f01b2673790aEc2E077470BFFcc371a77126</p>
         <p><b>Explorer:</b> <a href="https://etherscan.io/token/0xBDB5f01b2673790aEc2E077470BFFcc371a77126">View on Etherscan</a></p>
+
         <p><b>Join our community:</b></p>
-        <p>
-            <a href="https://t.me/PEPE_DOGE_VO"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" width="40px" alt="Telegram"></a>
-            <a href="https://twitter.com/PepeDogeToken"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" width="40px" alt="Twitter"></a>
-        </p>
+        <div class="social-icons">
+            <a href="https://t.me/PEPE_DOGE_VO">
+                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram">
+            </a>
+            <a href="https://twitter.com/PepeDogeToken">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter">
+            </a>
+        </div>
     </div>
 
-    <div class="about" id="about">
-        <h2>About the Project</h2>
-        <p>PepeDoge (PED) is a cryptocurrency built on the Ethereum blockchain. It is a meme-token that combines popular internet memes such as PEPE and DOGE.</p>
+    <!-- About Section -->
+    <div class="container fade-in" id="about">
+        <h2>About</h2>
+        <p>PepeDoge (PED) is a cryptocurrency created on the Ethereum blockchain. It belongs to the category of meme tokens, combining popular internet memes such as PEPE and DOGE.</p>
     </div>
-
-    <script>
-        function checkVisibility() {
-            let aboutSection = document.getElementById("about");
-            let rect = aboutSection.getBoundingClientRect();
-            let windowHeight = window.innerHeight;
-
-            if (rect.top <= windowHeight * 0.8) {
-                aboutSection.classList.add("visible");
-            }
-        }
-
-        window.addEventListener("scroll", checkVisibility);
-        checkVisibility();
-    </script>
 </body>
 </html>
+
 
 
 
