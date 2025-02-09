@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PepeDoge Token</title>
     <style>
+        /* Общие стили */
         body {
             background: linear-gradient(45deg, #1e1e1e, #333);
             color: white;
@@ -14,15 +15,25 @@
             padding: 0;
         }
 
+        /* Glassmorphism */
         .container {
             background: rgba(255, 255, 255, 0.1);
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-            max-width: 700px;
+            border-radius: 15px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            max-width: 600px;
             margin: 50px auto;
-            text-align: center;
-            word-wrap: break-word;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+        }
+
+        /* Плавное появление при скролле */
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         h1 {
@@ -35,17 +46,13 @@
             animation: fadeIn 2s ease-in forwards;
         }
 
+        /* Keyframes */
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
+        /* Логотип */
         img {
             max-width: 300px;
             width: 100%;
@@ -53,62 +60,82 @@
             border-radius: 10px;
         }
 
-        p {
-            font-size: 18px;
-            line-height: 1.5;
-            max-width: 90%;
-            margin: 10px auto;
-            word-wrap: break-word;
+        /* Иконки соцсетей */
+        .social-icons a {
+            display: inline-block;
+            margin: 10px;
+            transition: transform 0.3s ease;
         }
 
-        button {
-            background: #ffcc00;
-            padding: 10px 20px;
-            border: none;
-            color: black;
-            font-weight: bold;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: 0.3s;
+        .social-icons a:hover {
+            transform: scale(1.1);
         }
 
-        button:hover {
-            background: #ffdd44;
+        .social-icons img {
+            width: 40px;
+            height: 40px;
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
-
-        .pulse {
-            animation: pulse 1.5s infinite;
-        }
-
-        /* Анимации */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .fade-in {
-            animation: fadeIn 1.5s ease-in-out;
+        /* Раздел "О проекте" */
+        .about-section {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+            backdrop-filter: blur(10px);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1.2s ease-out, transform 1.2s ease-out;
         }
     </style>
 </head>
 <body>
-    <div class="container fade-in">
+    <div class="container">
         <h1 class="fade-in-text">PepeDoge Token</h1>
         <img src="https://pepedogeofficial.github.io/logoPepeDoge.svg" alt="PepeDoge Logo" class="pulse">
         <p class="fade-in-text">Welcome to PepeDoge – a new memecoin combining the best of Doge and Pepe!</p>
-        <p><b>Token Contract:</b> 0xBDB5f01b2673790aEc2E077470BFFcc371a77126</p>
+        <p><b>Token Contract:</b> <span id="contract" onclick="copyToClipboard()">0xBDB5f01b2673790aEc2E077470BFFcc371a77126</span></p>
         <p><b>Explorer:</b> <a href="https://etherscan.io/token/0xBDB5f01b2673790aEc2E077470BFFcc371a77126">View on Etherscan</a></p>
+
+        <!-- Соцсети с иконками -->
         <p><b>Join our community:</b></p>
-        <p><a href="https://t.me/PEPE_DOGE_VO">Telegram</a> | <a href="https://twitter.com/PepeDogeToken">Twitter</a></p>
+        <div class="social-icons">
+            <a href="https://t.me/PEPE_DOGE_VO"><img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram"></a>
+            <a href="https://twitter.com/PepeDogeToken"><img src="https://upload.wikimedia.org/wikipedia/en/6/60/Twitter_Logo_as_of_2021.svg" alt="Twitter"></a>
+        </div>
+
+        <!-- Новый раздел "О проекте" -->
+        <div class="about-section">
+            <h2>About PepeDoge</h2>
+            <p>PepeDoge (PEPEDOGE) — это криптовалюта, созданная на блокчейне Ethereum. Она относится к категории мем-токенов и объединяет популярные интернет-мемы, такие как PEPE и DOGE.</p>
+        </div>
     </div>
+
+    <script>
+        // Функция копирования адреса контракта
+        function copyToClipboard() {
+            var copyText = document.getElementById("contract").innerText;
+            navigator.clipboard.writeText(copyText);
+            alert("Contract Address Copied: " + copyText);
+        }
+
+        // Анимация появления блоков при скролле
+        function revealOnScroll() {
+            let elements = document.querySelectorAll('.container, .about-section');
+            elements.forEach((el) => {
+                let rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.85) {
+                    el.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll();
+    </script>
 </body>
 </html>
+
 
 
 
