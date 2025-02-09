@@ -13,7 +13,6 @@
             text-align: center;
             margin: 0;
             padding: 0;
-            scroll-behavior: smooth; /* Плавный скролл */
         }
 
         .container {
@@ -24,17 +23,30 @@
             max-width: 600px;
             margin: 50px auto;
         }
-        
+
         h1 {
             font-size: 36px;
             text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.5);
         }
 
+        /* Анимация появления текста */
         .fade-in-text {
             opacity: 0;
             animation: fadeIn 2s ease-in forwards;
         }
 
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Логотип */
         img {
             max-width: 300px;
             width: 100%;
@@ -42,6 +54,21 @@
             border-radius: 10px;
         }
 
+        /* Эффект свечения логотипа */
+        .glow {
+            animation: glowEffect 1.5s infinite alternate;
+        }
+
+        @keyframes glowEffect {
+            from {
+                filter: drop-shadow(0 0 5px rgba(255, 221, 68, 0.5));
+            }
+            to {
+                filter: drop-shadow(0 0 15px rgba(255, 221, 68, 1));
+            }
+        }
+
+        /* Кнопки */
         button {
             background: #ffcc00;
             padding: 10px 20px;
@@ -50,7 +77,7 @@
             font-weight: bold;
             cursor: pointer;
             border-radius: 5px;
-            transition: background 0.3s ease;
+            transition: 0.3s;
             font-size: 16px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
         }
@@ -59,21 +86,36 @@
             background: #ffdd44;
         }
 
-        /* Анимации */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
+        button:active {
+            transform: scale(0.95);
         }
 
+        /* Кнопка прокрутки вверх */
+        #scrollTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #ffcc00;
+            color: black;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s ease-in-out;
+        }
+
+        #scrollTopBtn:hover {
+            background: #ffdd44;
+        }
+
+        /* Анимация логотипа */
         @keyframes pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.05); }
             100% { transform: scale(1); }
-        }
-
-        /* Применение анимаций */
-        .fade-in {
-            animation: fadeIn 1.5s ease-in-out;
         }
 
         .pulse {
@@ -85,13 +127,7 @@
 <body>
     <div class="container fade-in">
         <h1 class="fade-in-text">PepeDoge Token</h1>
-        <img src="https://pepedogeofficial.github.io/logoPepeDoge.svg" alt="PepeDoge Logo" class="pulse" style="max-width: 300px; display: block; margin: 10px auto;">
-        <p class="fade-in-text">Welcome to PepeDoge – a new memecoin combining the best of Doge and Pepe!</p>
-        <p><b>Token Contract:</b> 0xBDB5f01b2673790aEc2E077470BFFcc371a77126</p>
-        <p><b>Explorer:</b> <a href="https://etherscan.io/token/0xBDB5f01b2673790aEc2E077470BFFcc371a77126">View on Etherscan</a></p>
-        <p><b>Join our community:</b></p>
-        <p><a href="https://t.me/PEPE_DOGE_VO">Telegram</a> | <a href="https://twitter.com/PepeDogeToken">Twitter</a></p>
-    </div>
-</body>
-</html>
+        <img src="https://pepedogeofficial.github.io/logoPepeDoge.svg" alt="PepeDoge Logo" class="pulse glow" style="max-width: 300px; display: block; margin: 10px auto;">
+        <p class="fade-in-text">Welcome to PepeDoge – a new memecoin combinin
+
 
