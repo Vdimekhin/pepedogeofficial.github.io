@@ -27,7 +27,22 @@ h1 {
     font-size: 36px;
     text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.5);
 }
-        
+  .fade-in-text {
+    opacity: 0;
+    animation: fadeIn 2s ease-in forwards;
+}
+
+keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+      
 img {
      max-width: 300px;
     width: 100%;
@@ -84,9 +99,9 @@ button:hover {
 </head>
 <body>
     <div class="container fade-in">
-        <h1>PepeDoge Token</h1>
+        <h1 class="fade-in-text">PepeDoge Token</h1>
         <img src="https://pepedogeofficial.github.io/logoPepeDoge.svg" alt="PepeDoge Logo" class="pulse" style="max-width: 300px; display: block; margin: 10px auto;">
-        <p>Welcome to PepeDoge – a new memecoin combining the best of Doge and Pepe!</p>
+        <p class="fade-in-text">Welcome to PepeDoge – a new memecoin combining the best of Doge and Pepe!</p>
         <p><b>Token Contract:</b> 0xBDB5f01b2673790aEc2E077470BFFcc371a77126</p>
         <p><b>Explorer:</b> <a href="https://etherscan.io/token/0xBDB5f01b2673790aEc2E077470BFFcc371a77126">View on Etherscan</a></p>
         <p><b>Join our community:</b></p>
