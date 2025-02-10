@@ -6,7 +6,7 @@
     <title>PepeDoge Token</title>
     <style>
         body {
-            background: #2c2c2c; /* Серый фон */
+            background: #333;
             color: white;
             font-family: 'Arial', sans-serif;
             text-align: center;
@@ -17,8 +17,8 @@
         .container {
             background: rgba(255, 255, 255, 0.1);
             padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
             max-width: 600px;
             margin: 50px auto;
             opacity: 0;
@@ -33,22 +33,24 @@
 
         h1 {
             font-size: 36px;
-            text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.3);
+            text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.5);
         }
 
-        .logo-container {
-            width: 320px;
-            height: 320px;
-            background: white; /* Белый фон */
+        /* Лого внутри белого круга */
+        .logo-wrapper {
+            background: white;
             border-radius: 50%;
+            width: 320px;  /* Размер белого круга */
+            height: 320px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 20px auto;
         }
 
-        .logo-container img {
-            max-width: 95%;
+        .logo {
+            width: 280px;  /* Размер логотипа внутри круга */
+            height: 280px;
             border-radius: 50%;
         }
 
@@ -98,8 +100,8 @@
 
     <div class="container">
         <h1>PepeDoge Token</h1>
-        <div class="logo-container">
-            <img src="https://pepedogeofficial.github.io/logoPepeDoge.svg" alt="PepeDoge Logo" class="pulse">
+        <div class="logo-wrapper">
+            <img src="https://pepedogeofficial.github.io/logoPepeDoge.svg" alt="PepeDoge Logo" class="logo pulse">
         </div>
         <p>Welcome to PepeDoge – a new memecoin combining the best of Doge and Pepe!</p>
         
@@ -155,6 +157,7 @@
 
 </body>
 </html>
+
 
 
 
