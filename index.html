@@ -6,8 +6,8 @@
     <title>PepeDoge Token</title>
     <style>
         body {
-            background: linear-gradient(45deg, #1e1e1e, #333);
-            color: white;
+            background: linear-gradient(45deg, #f5f5f5, #e0e0e0); /* Светлый фон */
+            color: black;
             font-family: 'Arial', sans-serif;
             text-align: center;
             margin: 0;
@@ -15,10 +15,10 @@
         }
 
         .container {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.8);
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
             max-width: 600px;
             margin: 50px auto;
             opacity: 0;
@@ -33,25 +33,23 @@
 
         h1 {
             font-size: 36px;
-            text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.5);
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
         }
 
-        /* Логотип с ровным белым ободком */
         .logo-container {
-            width: 280px;
-            height: 280px;
-            background: white;
+            width: 320px;
+            height: 320px;
+            background: white; /* Белый круглый фон */
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 20px auto;
-            box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
         }
 
         .logo-container img {
-            width: 85%;
-            height: 85%;
+            max-width: 85%;
             border-radius: 50%;
         }
 
@@ -65,7 +63,7 @@
             100% { transform: scale(1); }
         }
 
-        /* Социальные иконки */
+        /* Social icons */
         .social-icons {
             margin-top: 10px;
             display: flex;
@@ -83,7 +81,7 @@
             transform: scale(1.2);
         }
 
-        /* Кнопка копирования */
+        /* Copy button */
         .copy-btn {
             cursor: pointer;
             color: #ffcc00;
@@ -101,8 +99,8 @@
 
     <div class="container">
         <h1>PepeDoge Token</h1>
-        <div class="logo-container pulse">
-            <img src="https://pepedogeofficial.github.io/logoPepeDoge.svg" alt="PepeDoge Logo">
+        <div class="logo-container">
+            <img src="https://pepedogeofficial.github.io/logoPepeDoge.svg" alt="PepeDoge Logo" class="pulse">
         </div>
         <p>Welcome to PepeDoge – a new memecoin combining the best of Doge and Pepe!</p>
         
@@ -158,6 +156,7 @@
 
 </body>
 </html>
+
 
 
 
