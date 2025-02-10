@@ -36,7 +36,6 @@
             text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.5);
         }
 
-        /* Оставляем логотип в квадрате без круга */
         img {
             max-width: 300px;
             width: 100%;
@@ -55,7 +54,7 @@
             100% { transform: scale(1); }
         }
 
-        /* Social icons */
+        /* Соц. значки */
         .social-icons {
             margin-top: 10px;
             display: flex;
@@ -63,20 +62,26 @@
             gap: 20px;
         }
 
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
         .social-icons a img {
             width: 40px;
             height: 40px;
-            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5)); /* Свечение */
-            transition: transform 0.3s ease;
-            background: none; /* Убираем фон */
-            border-radius: 0; /* Полностью убираем скругления */
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+            transition: transform 0.3s ease, filter 0.3s ease;
+            background: transparent !important;
         }
 
         .social-icons a img:hover {
             transform: scale(1.2);
+            filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8));
         }
 
-        /* Copy button */
+        /* Кнопка копирования */
         .copy-btn {
             cursor: pointer;
             color: #ffcc00;
@@ -105,15 +110,15 @@
         <p><b>Join our community:</b></p>
         <div class="social-icons">
             <a href="https://t.me/PEPE_DOGE_VO">
-                <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" alt="Telegram">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram">
             </a>
             <a href="https://twitter.com/PepeDogeToken">
-                <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/Twitter_Logo_as_of_2021.svg" alt="Twitter">
             </a>
         </div>
     </div>
 
-    <!-- About Section -->
+    <!-- Блок "О проекте" -->
     <div class="container" id="about">
         <h2>About</h2>
         <p>PepeDoge (PED) is a cryptocurrency created on the Ethereum blockchain. It belongs to the category of meme tokens, combining popular internet memes such as PEPE and DOGE.</p>
@@ -149,6 +154,7 @@
 
 </body>
 </html>
+
 
 
 
