@@ -14,6 +14,23 @@
             padding: 0;
         }
 
+        .logo-container {
+            position: relative;
+            width: 320px;
+            height: 320px;
+            background: radial-gradient(circle, #ffffff 60%, rgba(255, 255, 255, 0) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 50px auto;
+        }
+
+        .logo-container img {
+            width: 85%;
+            height: auto;
+        }
+
         .container {
             background: rgba(255, 255, 255, 0.1);
             padding: 20px;
@@ -34,24 +51,6 @@
         h1 {
             font-size: 36px;
             text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.5);
-        }
-
-        /* Логотип в круге */
-        .logo-container {
-            width: 320px;
-            height: 320px;
-            background: radial-gradient(circle, #ffffff 60%, rgba(255, 255, 255, 0) 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 20px auto;
-        }
-
-        .logo-container img {
-            width: 260px; /* Сделали немного меньше, чтобы ухо влезло */
-            height: auto;
-            border-radius: 50%;
         }
 
         .pulse {
@@ -100,8 +99,8 @@
 
     <div class="container">
         <h1>PepeDoge Token</h1>
-        <div class="logo-container pulse">
-            <img src="https://pepedogeofficial.github.io/logoPepeDoge.svg" alt="PepeDoge Logo">
+        <div class="logo-container">
+            <img src="https://pepedogeofficial.github.io/logoPepeDoge.svg" alt="PepeDoge Logo" class="pulse">
         </div>
         <p>Welcome to PepeDoge – a new memecoin combining the best of Doge and Pepe!</p>
         
@@ -157,6 +156,7 @@
 
 </body>
 </html>
+
 
 
 
