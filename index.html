@@ -36,14 +36,23 @@
             text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.5);
         }
 
-        img {
-            max-width: 300px;
-            width: 100%;
-            height: auto;
-            border-radius: 50%;
+        /* Логотип с ровным белым ободком */
+        .logo-container {
+            width: 280px;
+            height: 280px;
             background: white;
-            padding: 15px; /* Делаем белый ободок ровным */
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px auto;
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+        }
+
+        .logo-container img {
+            width: 85%;
+            height: 85%;
+            border-radius: 50%;
         }
 
         .pulse {
@@ -56,7 +65,7 @@
             100% { transform: scale(1); }
         }
 
-        /* Social icons */
+        /* Социальные иконки */
         .social-icons {
             margin-top: 10px;
             display: flex;
@@ -74,7 +83,7 @@
             transform: scale(1.2);
         }
 
-        /* Copy button */
+        /* Кнопка копирования */
         .copy-btn {
             cursor: pointer;
             color: #ffcc00;
@@ -92,7 +101,9 @@
 
     <div class="container">
         <h1>PepeDoge Token</h1>
-        <img src="https://pepedogeofficial.github.io/logoPepeDoge.svg" alt="PepeDoge Logo" class="pulse">
+        <div class="logo-container pulse">
+            <img src="https://pepedogeofficial.github.io/logoPepeDoge.svg" alt="PepeDoge Logo">
+        </div>
         <p>Welcome to PepeDoge – a new memecoin combining the best of Doge and Pepe!</p>
         
         <p><b>Token Contract:</b> <span id="tokenAddress">0xBDB5f01b2673790aEc2E077470BFFcc371a77126</span></p>
@@ -147,6 +158,7 @@
 
 </body>
 </html>
+
 
 
 
