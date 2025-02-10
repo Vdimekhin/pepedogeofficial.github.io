@@ -55,13 +55,14 @@
             100% { transform: scale(1); }
         }
 
-        /* Social icons */
-        .social-icons {
-            margin-top: 10px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
+       .social-icons a img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+    border-radius: 0; /* Убираем округление, оставляем оригинальную форму */
+    background: none; /* Убираем фон */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3); /* Оставляем свечение */
+}
 
         .social-icons a img {
             width: 40px;
