@@ -21,27 +21,19 @@
             box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
             max-width: 600px;
             margin: 50px auto;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+        }
+
+        .container.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         h1 {
             font-size: 36px;
             text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.5);
-        }
-
-        .fade-in-text {
-            opacity: 0;
-            animation: fadeIn 2s ease-in forwards;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         img {
@@ -51,19 +43,8 @@
             border-radius: 10px;
         }
 
-        button {
-            background: #ffcc00;
-            padding: 10px 20px;
-            border: none;
-            color: black;
-            font-weight: bold;
-            cursor: pointer;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-
-        button:hover {
-            background: #ffdd44;
+        .pulse {
+            animation: pulse 2s infinite ease-in-out;
         }
 
         @keyframes pulse {
@@ -72,29 +53,48 @@
             100% { transform: scale(1); }
         }
 
-        .pulse {
-            animation: pulse 1.5s infinite;
-        }
-
         /* Social icons */
         .social-icons {
             margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
         }
 
-        .social-icons img {
+        .social-icons a img {
             width: 40px;
             height: 40px;
-            margin: 0 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icons a img:hover {
+            transform: scale(1.2);
+        }
+
+        /* Copy button */
+        .copy-btn {
+            cursor: pointer;
+            color: #ffcc00;
+            text-decoration: underline;
+            display: inline-block;
+            margin-top: 5px;
+        }
+
+        .copy-btn:hover {
+            color: #ffdd44;
         }
     </style>
 </head>
 <body>
-    <div class="container fade-in">
-        <h1 class="fade-in-text">PepeDoge Token</h1>
-        <img src="https://pepedogeofficial.github.io/logoPepeDoge.svg" alt="PepeDoge Logo" class="pulse" style="max-width: 300px; display: block; margin: 10px auto;">
-        <p class="fade-in-text">Welcome to PepeDoge – a new memecoin combining the best of Doge and Pepe!</p>
+
+    <div class="container">
+        <h1>PepeDoge Token</h1>
+        <img src="https://pepedogeofficial.github.io/logoPepeDoge.svg" alt="PepeDoge Logo" class="pulse">
+        <p>Welcome to PepeDoge – a new memecoin combining the best of Doge and Pepe!</p>
         
-        <p><b>Token Contract:</b> 0xBDB5f01b2673790aEc2E077470BFFcc371a77126</p>
+        <p><b>Token Contract:</b> <span id="tokenAddress">0xBDB5f01b2673790aEc2E077470BFFcc371a77126</span></p>
+        <span class="copy-btn" onclick="copyToClipboard()">Copy Address</span>
+
         <p><b>Explorer:</b> <a href="https://etherscan.io/token/0xBDB5f01b2673790aEc2E077470BFFcc371a77126">View on Etherscan</a></p>
 
         <p><b>Join our community:</b></p>
@@ -109,12 +109,42 @@
     </div>
 
     <!-- About Section -->
-    <div class="container fade-in" id="about">
+    <div class="container" id="about">
         <h2>About</h2>
         <p>PepeDoge (PED) is a cryptocurrency created on the Ethereum blockchain. It belongs to the category of meme tokens, combining popular internet memes such as PEPE and DOGE.</p>
     </div>
+
+    <script>
+        // Анимация появления блоков при скролле
+        function revealOnScroll() {
+            let containers = document.querySelectorAll('.container');
+            let windowHeight = window.innerHeight;
+
+            containers.forEach(container => {
+                let rect = container.getBoundingClientRect();
+                if (rect.top <= windowHeight - 50) {
+                    container.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        // Копирование адреса токена
+        function copyToClipboard() {
+            let copyText = document.getElementById("tokenAddress").textContent;
+            navigator.clipboard.writeText(copyText).then(() => {
+                alert("Token Address Copied!");
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        }
+    </script>
+
 </body>
 </html>
+
 
 
 
