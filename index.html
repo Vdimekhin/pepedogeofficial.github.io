@@ -170,9 +170,98 @@
         .copy-btn:hover {
             color: #ffdd44;
         }
+        .container {
+    text-align: center;
+    padding: 20px;
+}
+
+canvas {
+    max-width: 300px;
+    display: block;
+    margin: 0 auto;
+}
+
+.legend {
+    list-style: none;
+    padding: 0;
+    display: inline-block;
+    text-align: left;
+}
+
+.legend li {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.legend li:hover {
+    transform: scale(1.1);
+}
+
+.legend span {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+/* Подсветка активного сегмента */
+.active {
+    font-weight: bold;
+    transform: scale(1.2);
+}
+
     </style>
 </head>
 <body>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const ctx = document.getElementById("tokenChart").getContext("2d");
+
+    const data = {
+        labels: ["Uniswap Liquidity", "Team", "Marketing & Growth", "CEX Reserve", "Airdrop", "Community Rewards"],
+        datasets: [{
+            data: [30, 10, 15, 20, 10, 15],
+            backgroundColor: ["#FFC107", "#F44336", "#64B5F6", "#4CAF50", "#E040FB", "#FF9800"],
+            borderColor: "#333", /* Тонкая граница между сегментами */
+            borderWidth: 2
+        }]
+    };
+
+    const options = {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+            legend: { display: false }
+        }
+    };
+
+    const chart = new Chart(ctx, {
+        type: "pie",
+        data: data,
+        options: options
+    });
+
+    // Наведение на текст -> Подсветка сегмента
+    document.querySelectorAll(".legend li").forEach((item, index) => {
+        item.addEventListener("mouseenter", () => {
+            chart.setActiveElements([{ datasetIndex: 0, index: index }]);
+            chart.update();
+        });
+
+        item.addEventListener("mouseleave", () => {
+            chart.setActiveElements([]);
+            chart.update();
+        });
+    });
+});
+</script>
 
     <div class="container">
         <h1>PepeDoge Token</h1>
@@ -246,14 +335,18 @@
             <!-- 15% Community Rewards -->
             <circle r="16" cx="16" cy="16" fill="transparent" stroke="#ff9933" stroke-width="32" stroke-dasharray="15 85" stroke-dashoffset="-85"></circle>
         </svg>
-        <div class="legend">
-            <div><span style="background:#ffcc00;"></span> 30% Uniswap Liquidity</div>
-            <div><span style="background:#ff6666;"></span> 10% Team</div>
-            <div><span style="background:#66ccff;"></span> 15% Marketing & Growth</div>
-            <div><span style="background:#66ff66;"></span> 20% CEX Reserve</div>
-            <div><span style="background:#ff66ff;"></span> 10% Airdrop</div>
-            <div><span style="background:#ff9933;"></span> 15% Community Rewards</div>
-        </div>
+        <div class="container" id="distribution">
+    <h2>Token Distribution</h2>
+    <canvas id="tokenChart"></canvas>
+    <ul class="legend">
+        <li data-segment="0"><span style="background-color: #FFC107;"></span> 30% Uniswap Liquidity</li>
+        <li data-segment="1"><span style="background-color: #F44336;"></span> 10% Team</li>
+        <li data-segment="2"><span style="background-color: #64B5F6;"></span> 15% Marketing & Growth</li>
+        <li data-segment="3"><span style="background-color: #4CAF50;"></span> 20% CEX Reserve</li>
+        <li data-segment="4"><span style="background-color: #E040FB;"></span> 10% Airdrop</li>
+        <li data-segment="5"><span style="background-color: #FF9800;"></span> 15% Community Rewards</li>
+    </ul>
+</div>
     </div>
 </div>
 
