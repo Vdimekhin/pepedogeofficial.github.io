@@ -32,47 +32,55 @@
     <title>PepeDoge Token</title>
     
     <style>
-        .token-distribution {
-            text-align: center;
-            margin-top: 50px;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-        }
+      .token-distribution {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
 
-        .chart-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-        }
+.chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
 
-        .pie-chart {
-            width: 200px;
-            height: 200px;
-            transform: rotate(-90deg);
-        }
+.pie-chart {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;  /* Делаем диаграмму круглой */
+    transform: rotate(-90deg);
+}
 
-        .legend {
-            display: flex;
-            flex-direction: column;
-            text-align: left;
-        }
+.legend {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
 
-        .legend div {
-            display: flex;
-            align-items: center;
-            margin-bottom: 5px;
-        }
+.legend div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    cursor: pointer; /* Делаем текст кликабельным */
+    transition: transform 0.3s ease;
+}
 
-        .legend span {
-            width: 20px;
-            height: 20px;
-            display: inline-block;
-            margin-right: 10px;
-            border-radius: 50%;
-        }
+.legend div:hover {
+    transform: scale(1.1); /* Увеличение при наведении */
+}
+
+.legend span {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
     </style>
     <style>
         body {
