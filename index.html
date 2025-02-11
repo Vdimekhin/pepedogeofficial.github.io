@@ -56,10 +56,12 @@
 }
 
 .pie-chart circle {
-    stroke-width: 30;  /* Ширина сегментов */
-    stroke-linejoin: round; /* Закруглённые соединения */
-    stroke: #333; /* Цвет контура между сегментами */
+    stroke-width: 2;  /* Сделаем контур тоньше, чтобы не закрашивало круг */
+    stroke-linejoin: round;
+    stroke: none; /* Убираем серый фон */
+    stroke-opacity: 1; /* Делаем линии четкими */
 }
+
 .legend {
     display: flex;
     flex-direction: column;
