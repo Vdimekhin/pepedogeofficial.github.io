@@ -257,19 +257,20 @@ canvas {
 }
 
 .floating-btn {
-    background: #ffcc00;
-    color: black;
-    padding: 10px 15px;
-    border-radius: 5px;
+    background: #222; /* Тёмный фон */
+    color: #fff; /* Белый текст */
+    padding: 12px 20px;
+    border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 0 10px rgba(0, 255, 170, 0.8); /* Неоновое свечение */
+    transition: transform 0.2s, box-shadow 0.3s ease-in-out;
+    border: 2px solid rgba(0, 255, 170, 0.8); /* Обводка в цвет свечения */
 }
 
 .floating-btn:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 15px rgba(255, 204, 0, 0.7);
+    box-shadow: 0 0 20px rgba(0, 255, 170, 1); /* Усиленное неоновое свечение */
 }
 
     </style>
