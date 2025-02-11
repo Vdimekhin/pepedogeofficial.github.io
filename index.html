@@ -58,10 +58,14 @@
 }
 
 .pie-chart circle {
-    stroke-width: 2; /* Делаем границы чуть тоньше */
+    stroke-width: 32; /* Размер сегментов */
     stroke-linejoin: round;
-    stroke: #222; /* Серый контур вместо белого */
     stroke-opacity: 1;
+    transition: transform 0.3s ease-in-out;
+}
+
+.pie-chart circle:hover {
+    transform: scale(1.05); /* Лёгкое увеличение при наведении */
 }
 
 .legend {
