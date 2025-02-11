@@ -249,26 +249,6 @@ canvas {
     </style>
 </head>
 <body>
-document.addEventListener("DOMContentLoaded", function () {
-    const segments = document.querySelectorAll(".pie-chart circle"); // Исправил path на circle
-    const legendItems = document.querySelectorAll(".legend div");
-
-    legendItems.forEach((item, index) => {
-        item.addEventListener("mouseenter", () => {
-            segments[index].classList.add("active"); // Подсветка сегмента
-            item.style.fontWeight = "bold"; // Жирный текст
-        });
-
-        item.addEventListener("mouseleave", () => {
-            segments[index].classList.remove("active");
-            item.style.fontWeight = "normal";
-        });
-    });
-});
-.pie-chart circle.active {
-    transform: scale(1.1); /* Увеличение выделенного сегмента */
-    transition: transform 0.3s ease-in-out;
-}
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
