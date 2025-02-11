@@ -53,13 +53,15 @@
     height: 200px;
     border-radius: 50%;
     transform: rotate(-90deg);
+    display: block; /* Убедись, что элемент не скрыт */
+    margin: 0 auto;
 }
 
 .pie-chart circle {
-    stroke-width: 2;  /* Сделаем контур тоньше, чтобы не закрашивало круг */
+    stroke-width: 3;  /* Сделаем контур немного толще */
     stroke-linejoin: round;
-    stroke: none; /* Убираем серый фон */
-    stroke-opacity: 1; /* Делаем линии четкими */
+    stroke: #333; /* Цвет разделительных линий между секторами */
+    stroke-opacity: 1; /* Делаем контуры четкими */
 }
 
 .legend {
