@@ -50,10 +50,16 @@
             transition: opacity 1.5s ease-out, transform 1.5s ease-out;
         }
 
-        .container.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .container {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+.container.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
 
         h1 {
             font-size: 36px;
@@ -137,19 +143,20 @@
 
     <script>
         function revealOnScroll() {
-            let containers = document.querySelectorAll('.container');
-            let windowHeight = window.innerHeight;
+        let containers = document.querySelectorAll('.container');
+        let windowHeight = window.innerHeight;
 
-            containers.forEach(container => {
-                let rect = container.getBoundingClientRect();
-                if (rect.top <= windowHeight - 50) {
-                    container.classList.add('visible');
-                }
-            });
-        }
+        containers.forEach(container => {
+            let rect = container.getBoundingClientRect();
+            if (rect.top <= windowHeight - 100) {
+                container.classList.add('visible');
+            }
+        });
+    }
 
-        window.addEventListener('scroll', revealOnScroll);
-        window.addEventListener('load', revealOnScroll);
+    // Запуск анимации при загрузке и скролле
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
 
         function copyToClipboard() {
             let copyText = document.getElementById("tokenAddress").textContent;
@@ -161,7 +168,7 @@
         }
     </script>
     <!-- 🔥 Блок "О проекте" (About) -->
-   <div class="container visible" id="about">
+   <div class="container" id="about">
         <h2>About PepeDoge</h2>
         <p>PepeDoge (PED) is a cryptocurrency created on the Ethereum blockchain. 
         It belongs to the category of meme tokens, combining popular internet memes such as PEPE and DOGE.</p>
