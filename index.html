@@ -277,6 +277,35 @@ canvas {
     transform: scale(1.1);
     box-shadow: 0 0 20px rgba(0, 255, 170, 1); /* Усиленное неоновое свечение */
 }
+.nav-link {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: rgba(255, 255, 255, 0.2); /* Мягкая подсветка */
+    border-radius: 5px;
+}
+
+.floating-btn {
+    background: #222;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.floating-btn:hover {
+    background: rgba(0, 255, 170, 0.8); /* Мягкий неоновый эффект */
+    transform: scale(1.05);
+}
 
     </style>
 </head>
