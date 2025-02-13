@@ -3,73 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PepeDoge (PED) – The Ultimate Pepe & Doge Memecoin on Ethereum</title>
-
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="PepeDoge (PED) is the ultimate memecoin combining the best of Pepe and Doge on Ethereum. Join our Uniswap launch and exclusive Airdrop!">
-    <meta name="keywords" content="PepeDoge, PED, PepeDoge Token, PepeDoge Coin, PepeDoge crypto, memecoin, cryptocurrency, Ethereum, Uniswap, CoinGecko, CoinMarketCap, Meme Token, DeFi, airdrop, Pepe, Doge">
-
-    <!-- Open Graph & Twitter -->
-    <meta property="og:title" content="PepeDoge (PED) – The Ultimate Pepe & Doge Memecoin">
-    <meta property="og:description" content="Join the PepeDoge revolution! The best of Pepe and Doge, launching on Ethereum and Uniswap.">
-    <meta property="og:image" content="https://pepedogeofficial.com/1.png">
-    <meta property="og:url" content="https://pepedogeofficial.com">
     
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="PepeDoge (PED) – The Ultimate Pepe & Doge Memecoin">
-    <meta name="twitter:description" content="Join the PepeDoge revolution! The best of Pepe and Doge, launching on Ethereum and Uniswap.">
-    <meta name="twitter:image" content="https://pepedogeofficial.com/1.png">
+   <!-- 🔥 SEO: Title & Description -->
+<title>PepeDoge (PED) – The Ultimate Pepe & Doge Memecoin on Ethereum</title>
 
-    <!-- Favicon -->
+<!-- English Meta Tags -->
+<meta name="description" content="PepeDoge (PED) is the ultimate memecoin combining the best of Pepe and Doge on Ethereum. Join our Uniswap launch and exclusive Airdrop!">
+<meta name="keywords" content="PepeDoge, PED, PepeDoge Token, PepeDoge Coin, PepeDoge crypto, memecoin, cryptocurrency, Ethereum, Uniswap, CoinGecko, CoinMarketCap, Meme Token, DeFi, airdrop, Pepe, Doge">
+
+<!-- Russian Meta Tags -->
+<meta name="description" lang="ru" content="PepeDoge (PED) – мемкоин на Ethereum, объединяющий лучшие мемы Pepe и Doge. Старт на Uniswap! Участвуй в Airdrop и будь в числе первых инвесторов!">
+<meta name="keywords" lang="ru" content="PepeDoge, PED, PepeDoge Token, PepeDoge Coin, PepeDoge криптовалюта, мемкоин, Ethereum, Uniswap, CoinGecko, CoinMarketCap, Мем Токен, DeFi, airdrop, Pepe, Doge">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://pepedogeofficial.com">
+
+<!-- 🔥 Open Graph (Facebook, Telegram) -->
+<meta property="og:title" content="PepeDoge (PED) – The Ultimate Pepe & Doge Memecoin">
+<meta property="og:description" content="Join the PepeDoge revolution! The best of Pepe and Doge, launching on Ethereum and Uniswap.">
+<meta property="og:image" content="https://pepedogeofficial.com/1.png">
+<meta property="og:url" content="https://pepedogeofficial.com">
+<meta property="og:type" content="website">
+
+<!-- 🔥 Twitter Cards (для Twitter/X) -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PepeDoge (PED) – The Ultimate Pepe & Doge Memecoin">
+<meta name="twitter:description" content="Join the PepeDoge revolution! The best of Pepe and Doge, launching on Ethereum and Uniswap.">
+<meta name="twitter:image" content="https://pepedogeofficial.com/1.png">
+<meta name="twitter:site" content="@YourTwitterHandle">
+
+    <!-- 🔥 Canonical URL -->
+    <link rel="canonical" href="https://pepedogeofficial.com">
+
+    <!-- 🔥 Favicon -->
     <link rel="icon" href="https://pepedogeofficial.com/logoPepeDoge.svg" type="image/svg+xml">
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PepeDoge Token</title>
     
     <style>
-        /* Фиксированное меню */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            padding: 10px 0;
-            z-index: 1000;
-        }
+      .token-distribution {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            padding: 0;
-            margin: 0;
-        }
+.chart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
 
-        nav ul li {
-            margin: 0 15px;
-        }
+.pie-chart {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    transform: rotate(-90deg);
+    display: block; /* Убедись, что элемент не скрыт */
+    margin: 0 auto;
+}
 
-        nav ul li a {
+.pie-chart circle {
+    stroke-width: 32; /* Размер сегментов */
+    stroke-linejoin: round;
+    stroke-opacity: 1;
+    transition: transform 0.3s ease-in-out;
+}
+
+.pie-chart circle:hover {
+    transform: scale(1.05); /* Лёгкое увеличение при наведении */
+}
+
+.legend {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.legend div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    cursor: pointer; /* Делаем текст кликабельным */
+    transition: transform 0.3s ease;
+}
+
+.legend div:hover {
+    transform: scale(1.1); /* Увеличение при наведении */
+}
+
+.legend span {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+.pie-chart path {
+    transition: transform 0.3s ease, stroke-width 0.3s ease;
+}
+
+.pie-chart path.active {
+    transform: scale(1.1); /* Увеличиваем выделенный сегмент */
+    stroke-width: 3px; /* Немного утолщаем границу */
+}
+
+.legend div {
+    cursor: pointer;
+    transition: transform 0.3s ease, font-weight 0.3s ease;
+}
+
+.legend div:hover {
+    transform: scale(1.1);
+    font-weight: bold;
+}
+
+    </style>
+    <style>
+        body {
+            background: linear-gradient(45deg, #1e1e1e, #333);
             color: white;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 8px 15px;
-            transition: 0.3s;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
         }
 
-        nav ul li a:hover, nav ul li a.active {
-            background: rgba(0, 255, 170, 0.8);
-            border-radius: 5px;
-        }
-
-        /* Контейнеры */
         .container {
-            max-width: 600px;
-            margin: 80px auto 50px;
-            padding: 20px;
             background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            max-width: 600px;
+            margin: 50px auto;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1.5s ease-out, transform 1.5s ease-out;
         }
 
-        /* Анимации */
+        .container {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+.container.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+        h1 {
+            font-size: 36px;
+            text-shadow: 3px 3px 10px rgba(255, 255, 255, 0.5);
+        }
+
+        img {
+            max-width: 300px;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+
         .pulse {
             animation: pulse 2s infinite ease-in-out;
         }
@@ -80,99 +179,228 @@
             100% { transform: scale(1); }
         }
 
-        /* Социальные иконки */
-        .social-icons img {
+        /* Соц. значки */
+        .social-icons {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-icons a img {
             width: 40px;
-            transition: 0.3s;
+            height: 40px;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+            transition: transform 0.3s ease, filter 0.3s ease;
         }
 
-        .social-icons img:hover {
+        .social-icons a img:hover {
             transform: scale(1.2);
+            filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.8));
         }
 
-        /* График */
-        canvas {
-            max-width: 300px;
-            margin: 20px auto;
+        /* Кнопка копирования */
+        .copy-btn {
+            cursor: pointer;
+            color: #ffcc00;
+            text-decoration: underline;
+            display: inline-block;
+            margin-top: 5px;
         }
 
-        /* Плавная прокрутка */
-        html {
-            scroll-behavior: smooth;
+        .copy-btn:hover {
+            color: #ffdd44;
         }
+        .container {
+    text-align: center;
+    padding: 20px;
+}
+
+canvas {
+    max-width: 300px;
+    display: block;
+    margin: 0 auto;
+}
+
+.legend {
+    list-style: none;
+    padding: 0;
+    display: inline-block;
+    text-align: left;
+}
+
+.legend li {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.legend li:hover {
+    transform: scale(1.1);
+}
+
+.legend span {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+/* Подсветка активного сегмента */
+.active {
+    font-weight: bold;
+    transform: scale(1.2);
+}
+.floating-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.floating-btn {
+    background: #222; /* Тёмный фон */
+    color: #fff; /* Белый текст */
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(0, 255, 170, 0.8); /* Неоновое свечение */
+    transition: transform 0.2s, box-shadow 0.3s ease-in-out;
+    border: 2px solid rgba(0, 255, 170, 0.8); /* Обводка в цвет свечения */
+}
+
+.floating-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 255, 170, 1); /* Усиленное неоновое свечение */
+}
+
     </style>
 </head>
 <body>
 
-    <!-- Навигация -->
-    <nav>
-        <ul>
-            <li><a href="#dashboard">Dashboard</a></li>
-            <li><a href="#token-distribution">Token Distribution</a></li>
-            <li><a href="#roadmap">Roadmap</a></li>
-            <li><a href="#contact">Contact Us</a></li>
-            <li><a href="#invest">Invest</a></li>
-        </ul>
-    </nav>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    
+    // Наведение на текст -> Подсветка сегмента
+    document.querySelectorAll(".legend li").forEach((item, index) => {
+        item.addEventListener("mouseenter", () => {
+            chart.setActiveElements([{ datasetIndex: 0, index: index }]);
+            chart.update();
+        });
 
-    <!-- Dashboard -->
-    <div class="container" id="dashboard">
+        item.addEventListener("mouseleave", () => {
+            chart.setActiveElements([]);
+            chart.update();
+        });
+    });
+});
+</script>
+
+    <div class="container">
         <h1>PepeDoge Token</h1>
-        <img src="https://pepedogeofficial.github.io/logoPepeDoge.svg" alt="PepeDoge Logo">
+        <img src="https://pepedogeofficial.github.io/logoPepeDoge.svg" alt="PepeDoge Logo" class="pulse">
         <p>Welcome to PepeDoge – a new memecoin combining the best of Doge and Pepe!</p>
-        <button onclick="copyToClipboard()">📋 Copy Address</button>
+        
+        <p><b>Token Contract:</b> <span id="tokenAddress">0xBDB5f01b2673790aEc2E077470BFFcc371a77126</span></p>
+        <span class="copy-btn" onclick="copyToClipboard()">Copy Address</span>
+
+        <p><b>Explorer:</b> <a href="https://etherscan.io/token/0xBDB5f01b2673790aEc2E077470BFFcc371a77126">View on Etherscan</a></p>
+
+        <p><b>Join our community:</b></p>
+       
         <div class="social-icons">
-            <a href="https://t.me/PEPE_DOGE_VO"><img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram"></a>
-            <a href="https://twitter.com/PepeDogeToken"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter"></a>
-        </div>
+    <a href="https://t.me/PEPE_DOGE_VO">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram">
+    </a>
+    <a href="https://twitter.com/PepeDogeToken">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter">
+    </a>
+</div>
+
     </div>
 
-    <!-- Token Distribution -->
-    <div class="container" id="token-distribution">
-        <h2>Token Distribution</h2>
-        <canvas id="tokenChart"></canvas>
-    </div>
+    <script>
+        function revealOnScroll() {
+        let containers = document.querySelectorAll('.container');
+        let windowHeight = window.innerHeight;
 
-    <!-- Roadmap -->
+        containers.forEach(container => {
+            let rect = container.getBoundingClientRect();
+            if (rect.top <= windowHeight - 100) {
+                container.classList.add('visible');
+            }
+        });
+    }
+
+    // Запуск анимации при загрузке и скролле
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+
+        function copyToClipboard() {
+            let copyText = document.getElementById("tokenAddress").textContent;
+            navigator.clipboard.writeText(copyText).then(() => {
+                alert("Token Address Copied!");
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        }
+    </script>
+    <!-- 🔥 Блок "О проекте" (About) -->
+   <div class="container" id="about">
+        <h2>About PepeDoge</h2>
+        <p>PepeDoge (PED) is a cryptocurrency created on the Ethereum blockchain. 
+        It belongs to the category of meme tokens, combining popular internet memes such as PEPE and DOGE.</p>
+    </div>
+   <!-- 🔥 Token Distribution Chart -->
+<div class="container" id="token-distribution">
+    <h2>Token Distribution</h2>
+    <div class="chart-container">
+        <svg viewBox="0 0 32 32" class="pie-chart">
+    <!-- 30% Uniswap Liquidity -->
+    <circle r="16" cx="16" cy="16" fill="transparent" stroke="#ffcc00" stroke-width="32" stroke-dasharray="30 70" stroke-dashoffset="0"></circle>
+    <!-- 10% Team -->
+    <circle r="16" cx="16" cy="16" fill="transparent" stroke="#ff6666" stroke-width="32" stroke-dasharray="10 90" stroke-dashoffset="-30"></circle>
+    <!-- 15% Marketing & Growth -->
+    <circle r="16" cx="16" cy="16" fill="transparent" stroke="#66ccff" stroke-width="32" stroke-dasharray="15 85" stroke-dashoffset="-40"></circle>
+    <!-- 20% CEX Reserve -->
+    <circle r="16" cx="16" cy="16" fill="transparent" stroke="#66ff66" stroke-width="32" stroke-dasharray="20 80" stroke-dashoffset="-55"></circle>
+    <!-- 10% Airdrop -->
+    <circle r="16" cx="16" cy="16" fill="transparent" stroke="#ff66ff" stroke-width="32" stroke-dasharray="10 90" stroke-dashoffset="-75"></circle>
+    <!-- 15% Community Rewards -->
+    <circle r="16" cx="16" cy="16" fill="transparent" stroke="#ff9933" stroke-width="32" stroke-dasharray="15 85" stroke-dashoffset="-85"></circle>
+</svg>
+        
+        <ul class="legend">
+    <li><span style="background-color: #FFC107;"></span> 30% Uniswap Liquidity</li>
+    <li><span style="background-color: #F44336;"></span> 10% Team</li>
+    <li><span style="background-color: #64B5F6;"></span> 15% Marketing & Growth</li>
+    <li><span style="background-color: #4CAF50;"></span> 20% CEX Reserve</li>
+    <li><span style="background-color: #E040FB;"></span> 10% Airdrop</li>
+    <li><span style="background-color: #FF9800;"></span> 15% Community Rewards</li>
+</ul>
+
+    </div>
+</div>
+
+    <!-- 🔥 Блок "Roadmap" (Coming Soon) -->
     <div class="container" id="roadmap">
         <h2>Roadmap - Coming Soon</h2>
         <p>We are working on the PepeDoge roadmap! Stay tuned for updates and exciting new developments.</p>
     </div>
-
-    <!-- Contact -->
-    <div class="container" id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: <a href="mailto:pepedoge.contact@gmail.com">pepedoge.contact@gmail.com</a></p>
-    </div>
-
-    <!-- Invest -->
-    <div class="container" id="invest">
-        <h2>Invest</h2>
-        <p><a href="https://docs.google.com/forms/d/e/1FAIpQLSfzmirJ63aF3BzkntLkzP5sEjaS7C9g3pcbuOeVVXhtkf3USg/viewform">Investment Form</a></p>
-    </div>
-
-    <!-- Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        // Копирование токен-адреса
-        function copyToClipboard() {
-            navigator.clipboard.writeText("0xBDB5f01b2673790aEc2E077470BFFcc371a77126").then(() => {
-                alert("Token Address Copied!");
-            });
-        }
-
-        // График Token Distribution
-        new Chart(document.getElementById("tokenChart"), {
-            type: 'pie',
-            data: {
-                labels: ["Uniswap Liquidity", "Team", "Marketing", "CEX Reserve", "Airdrop", "Community Rewards"],
-                datasets: [{
-                    data: [30, 10, 15, 20, 10, 15],
-                    backgroundColor: ["#FFC107", "#F44336", "#64B5F6", "#4CAF50", "#E040FB", "#FF9800"]
-                }]
-            }
-        });
-    </script>
+<!-- Фиксированные кнопки -->
+<div class="floating-buttons">
+    <a href="mailto:pepedoge.contact@gmail.com" class="floating-btn email-btn">📧 Contact Us</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfzmirJ63aF3BzkntLkzP5sEjaS7C9g3pcbuOeVVXhtkf3USg/viewform" target="_blank" class="floating-btn invest-btn">💰 Invest</a>
+</div>
 
 </body>
 </html>
