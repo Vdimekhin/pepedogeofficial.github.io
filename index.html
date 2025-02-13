@@ -289,32 +289,7 @@ canvas {
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-    const ctx = document.getElementById("tokenChart").getContext("2d");
-
-    const data = {
-        labels: ["Uniswap Liquidity", "Team", "Marketing & Growth", "CEX Reserve", "Airdrop", "Community Rewards"],
-        datasets: [{
-            data: [30, 10, 15, 20, 10, 15],
-            backgroundColor: ["#FFC107", "#F44336", "#64B5F6", "#4CAF50", "#E040FB", "#FF9800"],
-            borderColor: "#333", /* Тонкая граница между сегментами */
-            borderWidth: 2
-        }]
-    };
-
-    const options = {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-            legend: { display: false }
-        }
-    };
-
-    const chart = new Chart(ctx, {
-        type: "pie",
-        data: data,
-        options: options
-    });
-
+    
     // Наведение на текст -> Подсветка сегмента
     document.querySelectorAll(".legend li").forEach((item, index) => {
         item.addEventListener("mouseenter", () => {
