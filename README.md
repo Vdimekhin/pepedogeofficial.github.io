@@ -1,9 +1,7 @@
-# PepeDoge  
-PepeDoge (PED) — это мемкоин, объединяющий лучшие черты Doge и Pepe.  
-Проект построен на Ethereum и ориентирован на комьюнити.  
+PepeDoge (PED) is a memecoin that combines the best traits of Doge and Pepe.
+The project is built on Ethereum and is community-driven.
 
-🔗 **Официальный сайт**: [pepedogeofficial.com](https://pepedogeofficial.com)  
-📜 **Контракт**: `0xBDB5f01b2673790aEc2E077470BFFcc371a77126`  
-📢 **Соцсети**: [Telegram](https://t.me/PEPE_DOGE_VO), [Twitter/X](https://x.com/PepeDogeToken))  
-📑 **Документация**: В процессе разработки...  
-
+🔗 Official Website: pepedogeofficial.com
+📜 Contract: 0xBDB5f01b2673790aEc2E077470BFFcc371a77126
+📢 Socials: Telegram, Twitter/X
+📑 Documentation: In progress...
